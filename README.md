@@ -2,7 +2,7 @@
 - 👀 I’m interested in data scientist
 - 🌱 I’m currently learning data scientist
 - 💞️ I’m looking to collaborate on projects
-- 📫 How to reach me 
+- 📫 Reach me through my mail
 
 <!---
 AnkitKr0711/AnkitKr0711 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
