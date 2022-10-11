@@ -1,7 +1,11 @@
 import numpy as np 
+
 import pandas as pd 
+
 import seaborn as sns
+
 import matplotlib.pyplot as plt
+
 
 # Loading file
   train=pd.read_csv('/kaggle/input/titanic/train.csv')
