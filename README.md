@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 
 
 # Loading file
+
   train=pd.read_csv('/kaggle/input/titanic/train.csv')
   
   test=pd.read_csv('/kaggle/input/titanic/test.csv')
@@ -25,9 +26,11 @@ import matplotlib.pyplot as plt
 # FEATURE SELECTION
 
 # selecting strong corelation between variable
+
   train.corr()[(train.corr()>0.5) | (train.corr()<-0.5)]['Survived'].dropna()
 
 # using heat map and pairplot to find colinearity between the features and visualization of feature
+
   temp=train[temp.index].corr().sort_values('SalePrice',ascending=False)
   
   plt.figure(figsize=(12,8))
@@ -37,6 +40,7 @@ import matplotlib.pyplot as plt
   sns.pairplot(train,hue='Survived')
 
 # Finding among strong feature finding with very low co-linearity among them 
+
   for i in range(temp.shape[0]):
   
       for j in range(temp.shape[1]):
@@ -48,9 +52,11 @@ import matplotlib.pyplot as plt
 # FEATURE ENGINEERING
 
 # Droping missing columns
-  train.drop(['Cabin'],axis=1,inplace=True)
+
+ train.drop(['Cabin'],axis=1,inplace=True)
   
  #Category Encoding of feature 
+ 
   def val_change(val):
   
     if val=='male':
@@ -61,21 +67,25 @@ import matplotlib.pyplot as plt
     
         return 0
         
+   train['Sex']=train['Sex'].map(val_change)
+        
   #Feature Construction
   
   train['relative']=train['Parch']+train['SibSp']
   
   # Outlier Data
+  
    pd.set_option('display.max_rows', None)
    
    train.describe(percentiles=[x/100 for x in range(101)])
    
   # Again checking the correlation among selected Feature
+  
    sns.heatmap(train.corr(),annot=True,vmin=-1,vmax=1)
    
-   train['Sex']=train['Sex'].map(val_change)
 
-  # 3-D visualization of Data for better understanding of the 
+  # 3-D visualization of Data for better understanding of the
+  
   w=train['Survived']
  
   x=train['Pclass']
@@ -93,6 +103,7 @@ import matplotlib.pyplot as plt
   plt.legend(train['Survived'])
   
   # Modeling the data
+  
   from sklearn.preprocessing import StandardScaler 
   
   scaler=StandardScaler()
