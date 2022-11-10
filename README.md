@@ -1,4 +1,4 @@
-My very first where I train a model that predicts which passengers survived the Titanic shipwreck.
+My very first Machine laerning where I train a model that predicts which passengers survived the Titanic shipwreck Disaster.
 
 Data source :- https://www.kaggle.com/competitions/titanic
 
